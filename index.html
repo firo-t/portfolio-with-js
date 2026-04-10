@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Firomsa Tesfaye - Software Engineering Student Portfolio">
+	<title>Firomsa Tesfaye | Portfolio</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="site-header" id="top">
+		<div class="container nav-wrap">
+			<a href="#top" class="logo" aria-label="Go to top">FT</a>
+			<nav class="nav" aria-label="Main navigation">
+				<a href="#hero" class="nav-link active">Home</a>
+				<a href="#about" class="nav-link">About</a>
+				<a href="#skills" class="nav-link">Skills</a>
+				<a href="#projects" class="nav-link">Projects</a>
+				<a href="#education" class="nav-link">Education</a>
+				<a href="#contact" class="nav-link">Contact</a>
+			</nav>
+			<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+				<span class="theme-icon" aria-hidden="true">🌙</span>
+			</button>
+		</div>
+	</header>
+
+	<main>
+		<section id="hero" class="hero section">
+			<div class="container hero-content reveal">
+				<div class="hero-text">
+					<p class="eyebrow">Hello, I am</p>
+					<h1>Firomsa Tesfaye</h1>
+					<h2>Software Engineering Student</h2>
+					<p class="intro">
+						I design and build clean digital experiences with a focus on real-world impact.
+						I am always learning, improving, and turning ideas into practical software solutions.
+					</p>
+					<div class="hero-actions">
+						<a href="#projects" class="btn btn-primary">View Projects</a>
+						<a href="#contact" class="btn btn-secondary">Contact Me</a>
+					</div>
+				</div>
+				<div class="hero-image">
+					<img src="images/profile.jpg" alt="Profile photo of Firomsa Tesfaye">
+				</div>
+			</div>
+		</section>
+
+		<section id="about" class="section">
+			<div class="container reveal">
+				<h2 class="section-title">About Me</h2>
+				<p class="section-text">
+					I’m a passionate software engineering student who enjoys creating useful and user-friendly applications.
+					I’m interested in both web and software development, and I like turning ideas into working solutions.
+					Every project helps me improve my programming, problem-solving, and critical thinking skills.
+					I’m driven by technology, creativity, and the chance to solve real-world challenges through code.
+				</p>
+			</div>
+		</section>
+
+		<section id="skills" class="section section-alt">
+			<div class="container reveal">
+				<h2 class="section-title">Skills</h2>
+				<div class="skills-grid">
+					<article class="skill-card">Java</article>
+					<article class="skill-card">C++</article>
+					<article class="skill-card">Python</article>
+					<article class="skill-card">JavaScript</article>
+					<article class="skill-card">HTML</article>
+					<article class="skill-card">CSS</article>
+					<article class="skill-card">PHP</article>
+					<article class="skill-card">MySQL</article>
+					<article class="skill-card">Video Editing</article>
+					<article class="skill-card">Prompt Engineering</article>
+					<article class="skill-card">Graphic Design</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects" class="section">
+			<div class="container reveal">
+				<h2 class="section-title">Projects</h2>
+				<div class="projects-grid">
+					<article class="project-card">
+						<h3>Project 1</h3>
+						<p>A responsive web interface prototype focused on clean layout and smooth user flow.</p>
+						<p class="stack">Tech: HTML, CSS, JavaScript</p>
+						<a href="#" class="btn btn-small">View Project</a>
+					</article>
+					<article class="project-card">
+						<h3>Project 2</h3>
+						<p>A simple software tool concept that solves a practical student productivity challenge.</p>
+						<p class="stack">Tech: Java, MySQL</p>
+						<a href="#" class="btn btn-small">View Project</a>
+					</article>
+					<article class="project-card">
+						<h3>Project 3</h3>
+						<p>A lightweight dashboard mockup for data tracking with a modern and minimal style.</p>
+						<p class="stack">Tech: Python, JavaScript</p>
+						<a href="#" class="btn btn-small">View Project</a>
+					</article>
+					<article class="project-card">
+						<h3>Project 4</h3>
+						<p>A creative digital design project combining UI thinking with visual storytelling.</p>
+						<p class="stack">Tech: Graphic Design, Video Editing</p>
+						<a href="#" class="btn btn-small">View Project</a>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="education" class="section section-alt">
+			<div class="container reveal">
+				<h2 class="section-title">Education</h2>
+				<div class="education-card">
+					<h3>Adama Science and Technology University</h3>
+					<p>BSc in Software Engineering</p>
+					<p>3rd Year Student</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="section">
+			<div class="container reveal">
+				<h2 class="section-title">Contact</h2>
+				<div class="contact-grid">
+					<div class="contact-info">
+						<p><strong>Email:</strong> xxxxx</p>
+						<p><strong>Phone:</strong> xxxx</p>
+						<p><strong>GitHub:</strong> xxxx</p>
+						<p><strong>LinkedIn:</strong> xxxxx</p>
+					</div>
+
+					<form id="contact-form" class="contact-form" novalidate>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+						<p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>© <span id="year"></span> Firomsa Tesfaye. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>
