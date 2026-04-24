@@ -50,6 +50,14 @@ a {
 	text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--accent) 72%, white 28%);
+	outline-offset: 2px;
+}
+
 .container {
 	width: min(1100px, 92%);
 	margin-inline: auto;
@@ -60,7 +68,7 @@ a {
 }
 
 .section-alt {
-	background: color-mix(in srgb, var(--surface) 70%, var(--bg) 30%);
+	background: color-mix(in srgb, var(--surface) 84%, var(--bg) 16%);
 }
 
 .section-title {
@@ -224,6 +232,12 @@ a {
 	font-size: 0.9rem;
 }
 
+.project-links {
+	display: flex;
+	gap: 0.55rem;
+	flex-wrap: wrap;
+}
+
 /* Skills */
 .skills-grid {
 	display: grid;
@@ -311,6 +325,17 @@ a {
 	color: var(--muted);
 }
 
+.contact-link {
+	color: var(--accent);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+.contact-link:hover {
+	text-decoration-thickness: 2px;
+}
+
 .contact-form {
 	background: var(--surface);
 	border: 1px solid var(--border);
@@ -342,6 +367,11 @@ a {
 .form-group textarea:focus {
 	border-color: var(--accent);
 	outline: none;
+}
+
+.input-error {
+	border-color: #d93025 !important;
+	background: color-mix(in srgb, #d93025 8%, var(--bg) 92%);
 }
 
 .form-feedback {
@@ -406,5 +436,24 @@ a {
 
 	.btn {
 		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	.reveal {
+		opacity: 1;
+		transform: none;
 	}
 }

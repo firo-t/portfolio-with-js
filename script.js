@@ -7,6 +7,9 @@ const revealItems = document.querySelectorAll(".reveal");
 const contactForm = document.getElementById("contact-form");
 const feedback = document.getElementById("form-feedback");
 const yearElement = document.getElementById("year");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
 
 // Set current year in footer
 yearElement.textContent = new Date().getFullYear();
@@ -68,13 +71,39 @@ revealItems.forEach((item) => revealObserver.observe(item));
 contactForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 
-	const name = document.getElementById("name").value.trim();
-	const email = document.getElementById("email").value.trim();
-	const message = document.getElementById("message").value.trim();
+	const name = nameInput.value.trim();
+	const email = emailInput.value.trim();
+	const message = messageInput.value.trim();
+
+	[nameInput, emailInput, messageInput].forEach((field) => {
+		field.classList.remove("input-error");
+		field.setAttribute("aria-invalid", "false");
+	});
 
 	if (!name || !email || !message) {
 		feedback.textContent = "Please fill in all fields.";
 		feedback.style.color = "#d93025";
+		if (!name) {
+			nameInput.classList.add("input-error");
+			nameInput.setAttribute("aria-invalid", "true");
+		}
+		if (!email) {
+			emailInput.classList.add("input-error");
+			emailInput.setAttribute("aria-invalid", "true");
+		}
+		if (!message) {
+			messageInput.classList.add("input-error");
+			messageInput.setAttribute("aria-invalid", "true");
+		}
+		return;
+	}
+
+	const nameRegex = /^[A-Za-z\s'-]{2,50}$/;
+	if (!nameRegex.test(name)) {
+		feedback.textContent = "Name should be 2-50 characters and contain only letters, spaces, apostrophes, or hyphens.";
+		feedback.style.color = "#d93025";
+		nameInput.classList.add("input-error");
+		nameInput.setAttribute("aria-invalid", "true");
 		return;
 	}
 
@@ -82,6 +111,16 @@ contactForm.addEventListener("submit", (event) => {
 	if (!emailRegex.test(email)) {
 		feedback.textContent = "Please enter a valid email address.";
 		feedback.style.color = "#d93025";
+		emailInput.classList.add("input-error");
+		emailInput.setAttribute("aria-invalid", "true");
+		return;
+	}
+
+	if (message.length < 20) {
+		feedback.textContent = "Message should be at least 20 characters.";
+		feedback.style.color = "#d93025";
+		messageInput.classList.add("input-error");
+		messageInput.setAttribute("aria-invalid", "true");
 		return;
 	}
 
